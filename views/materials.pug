@@ -1,0 +1,26 @@
+extends layout
+block content
+    script(src="js/materials.js")
+    .user
+        .row
+            .col-8
+                img.profile(src=user.image)
+                b=user.name
+            .col-4
+                a.btn.btn-secondary.float-right(onclick='signOut()') Logout
+    hr
+
+    h1.section Material Solutions
+    p Choose a material published on CMS to view questions and solutions. YOu can also create a material if it already does not exist.
+    .row
+        .col-6.material-list
+            | Loading ...
+        .col-6
+            .btn.btn-primary.float-right Create Material
+    br
+    br
+    .playground
+
+        p.text-center Content will load here
+
+

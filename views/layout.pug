@@ -1,7 +1,59 @@
 doctype html
-html
+html(lang='en')
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='google-signin-client_id', content='120289353582-qrn3fenvf6pkq0s8hfhk8002fju02g4g.apps.googleusercontent.com')
+
+    // Bootstrap CSS
+    link(href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lumen/bootstrap.min.css", rel="stylesheet", integrity="sha384-iqcNtN3rj6Y1HX/R0a3zu3ngmbdwEa9qQGHdkXwSRoiE+Gj71p0UNDSm99LcXiXV", crossorigin="anonymous")
+    link(rel="stylesheet", href="css/main.css")
+    title=title
+    // Optional JavaScript
+    // jQuery first, then Popper.js, then Bootstrap JS
+    script(src='https://code.jquery.com/jquery-3.3.1.min.js', isntegrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')
+    script(src='https://apis.google.com/js/platform.js', async='', defer='')
+    script(src="js/ajaxify.js")
+    script(src="js/showModal.js")
+    script(src="js/main.js")
+
   body
-    block content
+    // Image and text
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+      a.navbar-brand(href='#')
+        img.d-inline-block.align-top(src='img/logo.png', width='25', height='25', alt='')
+        |     <b>CSBITS</b>
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarNav.collapse.navbar-collapse
+        ul.navbar-nav
+          li.nav-item
+            a.nav-link(href='#')
+              | Home 
+          li.nav-item
+            a.nav-link(href='#') Solutions
+          li.nav-item
+            a.nav-link(href='#') Challenges
+          li.nav-item
+            a.nav-link(href='#') Discussions
+
+    //Modal       
+    .modal.modalify(tabindex='-1', role='dialog')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+          .modal-body
+            p Awaiting Content
+
+    //Ajaxify
+    .ajaxify-loader
+      | Awaiting content ...
+
+    .container.main
+      block content
+

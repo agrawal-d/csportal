@@ -1,5 +1,22 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  -if(logout)
+    b To log out of this app completely, you need to sign out of your google account. You will be automatically signed in next time you open this app.
+    b.text-success You can safely close this page
+  -else
+    .login
+      .login-content
+        img.logo(src='img/logo.png', alt='BITS Pilani')
+        h1 CS Portal
+        hr
+        p.text-left Login with your institute G-Suite account to access Cpmputer Science content.
+        .text-center
+          center
+            .g-signin2(data-onsuccess='onSignIn')
+        hr
+        a.ajaxify(href='javascript:void()', data-uri='help.html', data-target='container', data-loader='false') Help
+      
+
+
+
