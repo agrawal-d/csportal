@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var schemas = require('../schemas/all.js')
-mongoose.connect('mongodb://127.0.0.1/cs', { useNewUrlParser: true });
+var config = require("../config.js")
+mongoose.connect(config.database, { useNewUrlParser: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {

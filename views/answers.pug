@@ -1,0 +1,20 @@
+script
+    |document.querySelectorAll('pre code').forEach((block) => {
+    |    hljs.highlightBlock(block);
+    |});
+
+div
+    a.btn.btn-secondary.float-right Add solution
+    .clearfix
+    br
+-if(answers.length<1)
+    div.text-center No solutions yet
+-for(var i=0;i<answers.length;++i)
+    p By #{answers[i].user}
+    pre
+        code #{answers[i].code}
+    b Descreption
+    p   #{answers[i].descreption}
+    hr
+
+
