@@ -17,11 +17,12 @@ router.get('/', function (req, res, next) {
     res.render('index', { title: 'Loged out of CSBITS',logout:true });
   }else if(req.cookies.id) {
     console.log("Login from" + req.cookies.id)
-    res.render('dashboard', { body:req.body, title: "CSPortal - Get all you computer science content here.", user:req.cookies })
+    console.log("gOOGLEcLIENT",config.googleClient)
+    res.render('dashboard', { body:req.body, title: "CSPortal - Get all you computer science content here.", user:req.cookies,clientid:config.googleClient })
 
   } else {
     console.log("Not logged in")
-    res.render('index', { title: 'Login to CSPortal to access content' });
+    res.render('index', { title: 'Login to CSPortal to access content',clientid:config.googleClient });
   }
 
 });
