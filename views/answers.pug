@@ -4,17 +4,20 @@ script
     |});
 
 div
-    a.btn.btn-secondary.float-right Add solution
+    a.btn.btn-secondary.float-right(href=`add-solution?question=${question}`) Add solution
     .clearfix
     br
 -if(answers.length<1)
     div.text-center No solutions yet
 -for(var i=0;i<answers.length;++i)
-    p By #{answers[i].user}
-    pre
-        code #{answers[i].code}
-    b Descreption
-    p   #{answers[i].descreption}
-    hr
+    .card
+        .card-body
+            a(href=`/profile/${answers[i].user}`) By #{answers[i].user}
+            pre
+                code #{answers[i].code}
+            b Descreption
+            p   #{answers[i].descreption}
+    br
+
 
 

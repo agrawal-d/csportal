@@ -1,0 +1,14 @@
+h1=material.name
+b You are adding a question to this material.
+small.materialId(style="display:none")=material.id
+br
+br
+.alert.alert-warning
+    b Warning
+    p The question must me exactly the same as in the document you are referring to.
+br
+br
+input.form-control.new-question(placeholder="Write the name of question exactly")
+hr
+.btn.btn-warning.new-question-submit Add Question
+script(Src="js/add-question.js")

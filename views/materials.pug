@@ -1,22 +1,21 @@
 extends layout
 block content
     script(src="js/materials.js")
-    .user
-        .row
-            .col-8
-                img.profile(src=user.image)
-                b=user.name
-            .col-4
-                a.btn.btn-secondary.float-right(onclick='signOut()') Logout
-    hr
+    include includes/login.pug
 
-    h1.section Material Solutions
+    h1.section
+        i.fa.fa-smile
+        |Material Solutions
+    p
+        b A material is a documnet containing questions published by the Institute.
     p Choose a material published on CMS to view questions and solutions. YOu can also create a material if it already does not exist.
     .row
-        .col-6.material-list
+        .col-8.material-list
             | Loading ...
-        .col-6
-            .btn.btn-primary.float-right Create Material
+        .col-4
+            .btn.btn-primary.float-right(class="show-modal" data-uri="/render/create-material" data-title="Create a new Material")
+                i.fa.fa-plus-circle
+                |Create Material
     br
     br
     .playground

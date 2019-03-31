@@ -1,21 +1,23 @@
+var globalMaterial;
 function renderQuestions(questions){
     // alert(questions);
     // alert("OK")
     var questionHolder = "<ul class></ul>"
     var qs = ``;
     for(var i=0;i<questions.length;++i){
-        qs+=`<li class="list-group-item show-modal" data-title="${questions[i].question}" data-uri="/render/answers/${questions[i]._id}">${questions[i].question}</li>`
+        qs+=`<li class="list-group-item show-modal" style='cursor:pointer' data-title="${questions[i].question}" data-uri="/render/answers/${questions[i]._id}">${questions[i].question}</li>`
     }
     if(questions.length<1){
         qs = "<b>No questions added yet.</b>"
     }
     $(".playground").html(`<ul class="list-group">${qs}</ul>`);
-    var addQuestion = `<hr><a href="#" class="btn btn-primary show-modal" data-uri="/render/addQuestion">Add a question</a>`
+    var addQuestion = `<hr><a href="#" class="btn btn-primary show-modal" data-uri="/render/add-question/${globalMaterial}" data-title="Add a question">Add a question</a><br><br>`
     $(".playground").append(addQuestion)
 }
 
 
 function fetchQuestions(material) {
+    globalMaterial = material;
     // alert(material)
     ajaxify(`/api/questions?material=${material}`,"test",renderQuestions);
     

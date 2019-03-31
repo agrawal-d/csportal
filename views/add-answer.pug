@@ -1,0 +1,39 @@
+extends layout
+block content
+    include includes/login.pug
+    h1.section New Solution
+    h2=question.question
+    small.questionId(style='display:none;opacity:0;')=question.id
+    p Write your solution in the editor below.
+        ul
+            li You shoud add helpful comments to your code.
+            li Code must be indented and prettified.
+            li Code should be correct.
+            li Do not post an already posted solution. Only if your answer is unique should you post a soluiton.
+            li Write a descreption in the box to expalin if needed.
+    b Choose programming Language
+    select.form-control.lang
+        option(value="c_cpp" selected="") C / C++
+        option(value='java') Java
+        option(value='html') HTML
+        option(value='javascript') JavaScript
+        option(value='csharp') C#
+    hr
+    #editor
+        |#include &lt;stdio.h&gt;
+        |
+        |int main(void){
+        |    return 0;
+        |   // Dont forget to add comments to explain your code!
+        |}
+    br
+    br
+    h3 Descreption of your code
+    textarea.form-control.add-answer-descreption(placeholder='Be grammatically correct and write formally.')
+    hr
+    a.btn.btn-secondary.post-solution Post Solution
+    br
+    br
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/ace.js', type='text/javascript', charset='utf-8' onli)
+    script(src="js/editor.js")
+

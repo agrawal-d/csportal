@@ -42,7 +42,7 @@ html(lang='en')
   body
     // Image and text
     nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
-      a.navbar-brand(href='#')
+      a.navbar-brand(href='/')
         img.d-inline-block.align-top(src='img/logo.png', width='25', height='25', alt='')
         |     <b>CSBITS</b>
       button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
@@ -50,14 +50,21 @@ html(lang='en')
       #navbarNav.collapse.navbar-collapse
         ul.navbar-nav
           li.nav-item
-            a.nav-link(href='#')
+            a.nav-link(href='/')
+              i.fa.fa-home
               | Home 
           li.nav-item
-            a.nav-link(href='#') Solutions
+            a.nav-link(href='/materials')
+              i.fa.fa-book
+              | Solutions
           li.nav-item
-            a.nav-link(href='#') Challenges
+            a.nav-link(href='#')
+              i.fa.fa-pencil-ruler
+              |Challenges
           li.nav-item
-            a.nav-link(href='#') Discussions
+            a.nav-link(href='#')
+              i.fa.fa-comments
+              | Discussions
 
     //Modal       
     .modal.modalify.default-modal(tabindex='-1', role='dialog')
@@ -76,4 +83,8 @@ html(lang='en')
 
     .container.main
       block content
+  
+  <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+
+
 

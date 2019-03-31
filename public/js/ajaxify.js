@@ -1,3 +1,9 @@
+function showLoader(){
+    $(".ajaxify-loader").fadeIn();
+}
+function hideLoader(){
+    $(".ajaxify-loader").fadeOut();
+}
 function ajaxify(uri, target, callback) {
     var res;
         $('.ajaxify-loader').css("display", "block");

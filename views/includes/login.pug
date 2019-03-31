@@ -1,0 +1,10 @@
+.user
+    .row
+        .col-8
+            img.profile(src=user.image)
+            b=user.name
+        .col-4
+            a.btn.btn-secondary.float-right(onclick='signOut()')
+                i.fa.fa-sign-out-alt
+                |Logout
+hr
